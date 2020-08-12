@@ -10,6 +10,12 @@ const available_backends = AbstractBackend[]
 const current_backend = Ref{Union{Missing,AbstractBackend}}(missing)
 const use_display = Ref{Bool}(true)
 
+"""
+    inline!(inline = true)
+
+Display plots "inline" as opposed to opening a separate window. May require additional packages,
+like `ImageMagick.jl`.
+"""
 function inline!(inline = true)
     use_display[] = !inline
 end
